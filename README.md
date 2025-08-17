@@ -1,7 +1,6 @@
 # Build with AI: Developing Discord Bots Conversationally (Deno TypeScript)
 
 [![CI](https://github.com/course/discord-bot-conversational/actions/workflows/ci.yml/badge.svg)](https://github.com/course/discord-bot-conversational/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/course/discord-bot-conversational/branch/main/graph/badge.svg)](https://codecov.io/gh/course/discord-bot-conversational)
 [![PMAT TDG](https://img.shields.io/badge/PMAT%20TDG-92%25-brightgreen)](https://github.com/course/discord-bot-conversational)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Deno](https://img.shields.io/badge/Deno-1.39+-blue)](https://deno.land)
