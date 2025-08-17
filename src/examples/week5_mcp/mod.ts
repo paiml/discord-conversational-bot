@@ -31,26 +31,26 @@ const EnvSchema = z.object({
 const env = EnvSchema.parse(Deno.env.toObject());
 
 /**
- * MCP Request/Response types
+ * MCP Request/Response types (unused placeholders for future implementation)
  * PMAT: Strong typing for protocol communication
  */
-interface MCPRequest {
-  jsonrpc: '2.0';
-  method: string;
-  params?: Record<string, unknown>;
-  id: string | number;
-}
+// interface MCPRequest {
+//   jsonrpc: '2.0';
+//   method: string;
+//   params?: Record<string, unknown>;
+//   id: string | number;
+// }
 
-interface MCPResponse {
-  jsonrpc: '2.0';
-  result?: unknown;
-  error?: {
-    code: number;
-    message: string;
-    data?: unknown;
-  };
-  id: string | number;
-}
+// interface MCPResponse {
+//   jsonrpc: '2.0';
+//   result?: unknown;
+//   error?: {
+//     code: number;
+//     message: string;
+//     data?: unknown;
+//   };
+//   id: string | number;
+// }
 
 /**
  * Tool definition for MCP
@@ -87,7 +87,7 @@ export class MCPBot {
   private tools: Map<string, MCPTool>;
   private contexts: Map<string, AIContext>;
   private readonly maxContextLength = 10;
-  private readonly mcpServerUrl: string;
+  // private readonly _mcpServerUrl: string; // Reserved for future MCP server connection
 
   constructor() {
     // Initialize Discordeno bot with required intents
@@ -102,7 +102,7 @@ export class MCPBot {
     // Initialize containers
     this.tools = new Map();
     this.contexts = new Map();
-    this.mcpServerUrl = env.MCP_SERVER_URL || 'http://localhost:3000/mcp';
+    // this._mcpServerUrl = env.MCP_SERVER_URL || 'http://localhost:3000/mcp'; // Reserved for future use
 
     this.setupEventHandlers();
     this.registerTools();

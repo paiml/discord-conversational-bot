@@ -62,3 +62,6 @@ mcp-server/logs/
 *.sqlite
 *.sqlite3
 *.db
+
+# PMAT context
+deep_context.md

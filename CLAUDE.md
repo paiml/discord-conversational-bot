@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Common Development Commands
 
 ### Development Workflow
+
 ```bash
 # Start development with hot reload
 deno task dev
@@ -18,6 +19,7 @@ deno task week5  # MCP integration example
 ```
 
 ### Testing and Quality
+
 ```bash
 # Run all tests
 deno task test
@@ -40,6 +42,7 @@ make quality
 ```
 
 ### Code Formatting and Linting
+
 ```bash
 # Format code
 deno task fmt
@@ -53,6 +56,7 @@ make lint
 ```
 
 ### Build and Deploy
+
 ```bash
 # Compile to standalone executable
 deno task compile
@@ -64,6 +68,7 @@ make deploy
 ```
 
 ### PMAT Quality Metrics
+
 ```bash
 # Calculate PMAT TDG score
 deno task tdg
@@ -74,6 +79,7 @@ make tdg-score
 ## High-Level Architecture
 
 ### Technology Stack
+
 - **Runtime**: Deno (NOT Node.js) - secure TypeScript runtime with built-in tooling
 - **Discord Library**: Discordeno v18.0.1 - Native Deno Discord library
 - **Quality Standard**: PMAT (Procedural/Modular Analysis Technique) with TDG scoring
@@ -82,6 +88,7 @@ make tdg-score
 ### Project Structure
 
 #### Core Bot Architecture
+
 The project implements a progressive learning path through three example bots:
 
 1. **Week 1 Basic Bot** (`src/examples/week1_basic/`)
@@ -100,11 +107,13 @@ The project implements a progressive learning path through three example bots:
    - Tool and resource management for AI interactions
 
 #### Dependency Management
+
 - All dependencies centralized in `src/deps.ts`
 - Version-pinned imports from deno.land for deterministic builds
 - No package.json or node_modules - pure Deno approach
 
 #### Quality Standards
+
 - Cyclomatic complexity must be < 10 per function
 - 80% minimum test coverage requirement
 - Strong typing enforced throughout with TypeScript strict mode
@@ -118,13 +127,16 @@ The project implements a progressive learning path through three example bots:
 4. **Error Boundaries**: Comprehensive error handling with proper logging via Deno's std/log
 
 ### Environment Configuration
+
 Required environment variables (set in `.env` file):
+
 - `DISCORD_TOKEN`: Discord bot authentication token
 - `CLIENT_ID`: Discord application client ID
 - `MCP_SERVER_URL`: (Optional) MCP server endpoint for Week 5
 - `OPENAI_API_KEY`: (Optional) OpenAI API key for AI features
 
 ### Testing Strategy
+
 - Unit tests for individual bot components
 - Integration tests for Discord API interactions
 - Property-based testing for conversation flows
