@@ -1,0 +1,60 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-env --allow-read --watch src/main.ts",
+    "start": "deno run --allow-net --allow-env --allow-read src/main.ts",
+    "test": "deno test --allow-all",
+    "test:coverage": "deno test --allow-all --coverage=coverage",
+    "coverage": "deno coverage coverage",
+    "fmt": "deno fmt",
+    "lint": "deno lint",
+    "check": "deno fmt --check && deno lint && deno check src/**/*.ts",
+    "compile": "deno compile --allow-net --allow-env --allow-read --output=discord-bot src/main.ts",
+    "cache": "deno cache src/deps.ts",
+    "quality": "deno task check && deno task test",
+    "tdg": "deno run --allow-read --allow-write scripts/calculate_tdg.ts",
+    "week1": "deno run --allow-net --allow-env --allow-read src/examples/week1_basic/mod.ts",
+    "week3": "deno run --allow-net --allow-env --allow-read src/examples/week3_conversational/mod.ts",
+    "week5": "deno run --allow-net --allow-env --allow-read --allow-run src/examples/week5_mcp/mod.ts"
+  },
+  "imports": {
+    "discord": "https://deno.land/x/harmony@v2.9.1/mod.ts",
+    "dotenv": "https://deno.land/std@0.208.0/dotenv/mod.ts",
+    "zod": "https://deno.land/x/zod@v3.22.4/mod.ts",
+    "std/": "https://deno.land/std@0.208.0/",
+    "testing/": "https://deno.land/std@0.208.0/testing/"
+  },
+  "test": {
+    "include": ["src/", "scripts/"],
+    "exclude": ["src/deps.ts"]
+  },
+  "fmt": {
+    "include": ["src/", "scripts/", "*.md", "*.json"],
+    "exclude": ["coverage/"],
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "singleQuote": true,
+    "proseWrap": "preserve"
+  },
+  "lint": {
+    "include": ["src/", "scripts/"],
+    "exclude": ["coverage/"],
+    "rules": {
+      "tags": ["recommended"],
+      "exclude": ["no-explicit-any", "require-await"],
+      "include": ["no-unused-vars", "no-unreachable", "prefer-const"]
+    }
+  },
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["deno.window", "deno.unstable"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "lock": false
+}

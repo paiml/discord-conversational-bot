@@ -1,0 +1,267 @@
+{
+  "name": "discord-bot-course-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Discord Bot Development Course with PMCP quality standards",
+  "protocol": "mcp/1.0",
+  "transport": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["./mcp-server/index.js"]
+  },
+  "tools": [
+    {
+      "name": "generate_bot_code",
+      "description": "Generate Discord bot code with PMAT quality standards",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bot_type": {
+            "type": "string",
+            "enum": ["basic", "conversational", "ai-powered", "moderation", "utility"],
+            "description": "Type of bot to generate"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of features to include"
+          },
+          "quality_level": {
+            "type": "string",
+            "enum": ["prototype", "development", "production"],
+            "default": "production",
+            "description": "Quality level for generated code"
+          }
+        },
+        "required": ["bot_type"]
+      }
+    },
+    {
+      "name": "validate_bot_code",
+      "description": "Validate Discord bot code against PMAT quality gates",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "code_path": {
+            "type": "string",
+            "description": "Path to bot code to validate"
+          },
+          "quality_gates": {
+            "type": "object",
+            "properties": {
+              "complexity": {
+                "type": "number",
+                "default": 10
+              },
+              "coverage": {
+                "type": "number",
+                "default": 80
+              },
+              "satd": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          }
+        },
+        "required": ["code_path"]
+      }
+    },
+    {
+      "name": "generate_tests",
+      "description": "Generate comprehensive tests for Discord bot",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bot_path": {
+            "type": "string",
+            "description": "Path to bot implementation"
+          },
+          "test_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["unit", "integration", "property", "e2e"]
+            },
+            "default": ["unit", "integration", "property"]
+          }
+        },
+        "required": ["bot_path"]
+      }
+    },
+    {
+      "name": "optimize_ai_prompts",
+      "description": "Optimize prompts for AI-powered Discord bots",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "Original prompt to optimize"
+          },
+          "context": {
+            "type": "string",
+            "description": "Bot context and use case"
+          },
+          "optimization_goals": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["cost", "quality", "speed", "safety"]
+            },
+            "default": ["quality", "safety"]
+          }
+        },
+        "required": ["prompt"]
+      }
+    },
+    {
+      "name": "analyze_conversation_flow",
+      "description": "Analyze and optimize conversation flows",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "flow_definition": {
+            "type": "object",
+            "description": "Conversation flow structure"
+          },
+          "optimization_targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Areas to optimize"
+          }
+        },
+        "required": ["flow_definition"]
+      }
+    },
+    {
+      "name": "generate_documentation",
+      "description": "Generate comprehensive documentation for Discord bot",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bot_path": {
+            "type": "string",
+            "description": "Path to bot code"
+          },
+          "doc_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["api", "user", "deployment", "architecture"]
+            },
+            "default": ["api", "user", "deployment"]
+          }
+        },
+        "required": ["bot_path"]
+      }
+    },
+    {
+      "name": "debug_bot_issue",
+      "description": "Debug issues in Discord bot implementation",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "error_message": {
+            "type": "string",
+            "description": "Error message or symptom"
+          },
+          "code_context": {
+            "type": "string",
+            "description": "Relevant code section"
+          },
+          "logs": {
+            "type": "string",
+            "description": "Recent log output"
+          }
+        },
+        "required": ["error_message"]
+      }
+    },
+    {
+      "name": "scaffold_project",
+      "description": "Scaffold a new Discord bot project with best practices",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string",
+            "description": "Name of the project"
+          },
+          "template": {
+            "type": "string",
+            "enum": ["basic", "typescript", "advanced", "enterprise"],
+            "default": "typescript"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Initial features to include"
+          },
+          "include_ci": {
+            "type": "boolean",
+            "default": true,
+            "description": "Include CI/CD configuration"
+          }
+        },
+        "required": ["project_name"]
+      }
+    }
+  ],
+  "resources": {
+    "course_materials": {
+      "type": "directory",
+      "path": "./course-materials",
+      "description": "Course materials and examples"
+    },
+    "bot_templates": {
+      "type": "directory",
+      "path": "./templates",
+      "description": "Bot project templates"
+    },
+    "quality_configs": {
+      "type": "directory",
+      "path": "./quality",
+      "description": "PMAT quality configurations"
+    }
+  },
+  "quality_standards": {
+    "pmat": {
+      "enabled": true,
+      "gates": {
+        "cyclomatic_complexity": 10,
+        "test_coverage": 80,
+        "documentation_coverage": 100,
+        "satd_comments": 0,
+        "security_issues": 0
+      }
+    },
+    "pmcp": {
+      "enabled": true,
+      "validation": "strict",
+      "deterministic": true,
+      "temperature": 0.0
+    }
+  },
+  "integrations": {
+    "discord": {
+      "api_version": "10",
+      "library": "discord.js",
+      "version": "14.14.1"
+    },
+    "ai": {
+      "provider": "anthropic",
+      "model": "claude-3-opus",
+      "via_mcp": true
+    },
+    "testing": {
+      "framework": "jest",
+      "property_testing": "fast-check"
+    }
+  }
+}
