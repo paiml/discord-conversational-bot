@@ -1,13 +1,13 @@
 # Build with AI: Developing Discord Bots Conversationally (Deno TypeScript)
 
-[![CI](https://github.com/course/discord-bot-conversational/actions/workflows/ci.yml/badge.svg)](https://github.com/course/discord-bot-conversational/actions/workflows/ci.yml)
-[![PMAT TDG](https://img.shields.io/badge/PMAT%20TDG-92%25-brightgreen)](https://github.com/course/discord-bot-conversational)
+[![CI](https://github.com/paiml/discord-conversational-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/paiml/discord-conversational-bot/actions/workflows/ci.yml)
+[![PMAT TDG](https://img.shields.io/badge/PMAT%20TDG-92%25-brightgreen)](https://github.com/paiml/discord-conversational-bot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Deno](https://img.shields.io/badge/Deno-1.39+-blue)](https://deno.land)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
-[![Test Coverage](https://img.shields.io/badge/coverage-80%25-green)](https://github.com/course/discord-bot-conversational)
-[![Code Quality](https://img.shields.io/badge/quality-A+-brightgreen)](https://github.com/course/discord-bot-conversational)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/course/discord-bot-conversational/pulls)
+[![Test Coverage](https://img.shields.io/badge/coverage-80%25-green)](https://github.com/paiml/discord-conversational-bot)
+[![Code Quality](https://img.shields.io/badge/quality-A+-brightgreen)](https://github.com/paiml/discord-conversational-bot)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/paiml/discord-conversational-bot/pulls)
 
 A comprehensive course for building production-ready Discord bots with conversational AI capabilities using **Deno TypeScript**, MCP (Model Context Protocol), and PMAT quality standards.
 
@@ -41,7 +41,7 @@ Learn to build sophisticated Discord bots that leverage AI for natural conversat
 
 ```bash
 # Clone the repository
-git clone https://github.com/course/discord-bot-conversational.git
+git clone https://github.com/paiml/discord-conversational-bot.git
 cd discord-bot-conversational
 
 # Set up environment variables
